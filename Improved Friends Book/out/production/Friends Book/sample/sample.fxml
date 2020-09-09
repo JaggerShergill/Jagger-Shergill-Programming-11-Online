@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <TabPane prefHeight="443.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Add Friends">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <VBox alignment="CENTER_RIGHT" layoutX="14.0" layoutY="14.0" prefHeight="200.0" prefWidth="100.0" spacing="20.0">
+                           <children>
+                              <Label text="First Name:">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Last Name:">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Age:">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" layoutX="121.0" layoutY="14.0" prefHeight="200.0" prefWidth="100.0" spacing="25.0">
+                           <children>
+                              <TextField fx:id="textGetFirstName" promptText="First Name" />
+                              <TextField fx:id="textGetLastName" promptText="Last Name" />
+                              <TextField fx:id="textGetAge" promptText="Age" />
+                           </children>
+                        </VBox>
+                        <Button fx:id="buttonAddFriend" layoutX="274.0" layoutY="101.0" mnemonicParsing="false" onAction="#addFriend" text="Add Friend" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Friends List">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ListView fx:id="friendsList" layoutX="14.0" layoutY="14.0" onMouseClicked="#displayFriend" prefHeight="343.0" prefWidth="200.0" />
+                        <Label layoutX="319.0" layoutY="14.0" text="Friend Information">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="236.0" layoutY="43.0" prefHeight="18.0" prefWidth="76.0" text="First Name:" />
+                        <Label layoutX="236.0" layoutY="62.0" prefHeight="18.0" prefWidth="76.0" text="Last Name:" />
+                        <Label layoutX="266.0" layoutY="80.0" text="Age:" />
+                        <Label fx:id="lblFirstName" layoutX="347.0" layoutY="44.0" />
+                        <Label fx:id="lblLastName" layoutX="347.0" layoutY="62.0" />
+                        <Label fx:id="lblAge" layoutX="347.0" layoutY="80.0" />
+                        <Button fx:id="buttonDeleteFriend" layoutX="234.0" layoutY="110.0" mnemonicParsing="false" onAction="#deleteFriend" text="Delete Friend" />
+                        <Button fx:id="buttonSaveList" layoutX="545.0" layoutY="173.0" mnemonicParsing="false" onAction="#saveList" text="Save" />
+                        <Button fx:id="buttonLoadList" layoutX="544.0" layoutY="218.0" mnemonicParsing="false" onAction="#loadList" text="Load" />
+                        <TextField fx:id="textGetFileSave" layoutX="345.0" layoutY="173.0" promptText="File Name" />
+                        <TextField fx:id="textGetFileLoad" layoutX="345.0" layoutY="218.0" promptText="File Name" />
+                        <Label layoutX="223.0" layoutY="172.0" text="Saving to File:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="228.0" layoutY="217.0" text="Loading File:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="btnLoadAll" layoutX="376.0" layoutY="284.0" mnemonicParsing="false" onAction="#loadAllFriends" text="Load All Friends" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</VBox>
